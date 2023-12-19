@@ -11,4 +11,16 @@ let books = {
       10: {"author": "Samuel Beckett","title": "Molloy, Malone Dies, The Unnamable, the trilogy", "reviews": {} }
 }
 
-module.exports=books;
+const fetchData = () => {
+      return new Promise((resolve) => {
+        // Simulate some asynchronous operation (e.g., fetching data from a database)
+        // Replace this with your actual asynchronous code
+        setTimeout(() => {
+          const booksData = books;
+          resolve(booksData);
+        }, 500); // Simulating a delay of 1 second
+      });
+};
+
+module.exports.books=books;
+module.exports.fetchData=fetchData;
